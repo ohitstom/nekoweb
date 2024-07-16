@@ -1,4 +1,7 @@
 @forward "pages/index";
+@forward "pages/test";
+
+@forward "components/wrapper";
 
 :root {
     --color-primary: #007bff;
@@ -11,4 +14,9 @@
     --color-dark: #343a40;
     --color-white: #fff;
     --color-black: #000;
+
+    body {
+        display: block;
+        margin: 8px;
+    }
 }

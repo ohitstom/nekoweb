@@ -1,1 +1,77 @@
-body{background:url(https://m.media-amazon.com/images/I/61xwRmjCsGL._AC_UF894,1000_QL80_.jpg) no-repeat center center fixed;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}body{display:block;margin:8px}:root{--color-primary: #007bff;--color-secondary: #6c757d;--color-success: #28a745;--color-info: #17a2b8;--color-warning: #ffc107;--color-danger: #dc3545;--color-light: #f8f9fa;--color-dark: #343a40;--color-white: #fff;--color-black: #000}
+#index body {
+  background: url(https://m.media-amazon.com/images/I/61xwRmjCsGL._AC_UF894,1000_QL80_.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#index .wrapper > a {
+  display: block;
+  color: black;
+  font-size: 2em;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+  padding: 8px;
+  border-radius: 4px;
+  top: 50%;
+  position: absolute;
+  transition: all 0.2s ease;
+}
+#index .wrapper > a:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease;
+}
+
+#test body {
+  background: url(https://s1.zerochan.net/Hatsune.Miku.600.1359232.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#test .wrapper > a {
+  display: block;
+  color: black;
+  font-size: 2em;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+  padding: 8px;
+  border-radius: 4px;
+  top: 50%;
+  position: absolute;
+  transition: all 0.2s ease;
+}
+#test .wrapper > a:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+:root {
+  --color-primary: #007bff;
+  --color-secondary: #6c757d;
+  --color-success: #28a745;
+  --color-info: #17a2b8;
+  --color-warning: #ffc107;
+  --color-danger: #dc3545;
+  --color-light: #f8f9fa;
+  --color-dark: #343a40;
+  --color-white: #fff;
+  --color-black: #000;
+}
+:root body {
+  display: block;
+  margin: 8px;
+}
+
+/*# sourceMappingURL=index.css.map */
