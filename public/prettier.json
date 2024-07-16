@@ -1,7 +1,7 @@
 {
-    "useTabs": true,
-    "tabWidth": 4,
-    "html": {
-        "htmlWhitespaceSensitivity": "ignore"
-    }
+  "useTabs": true,
+  "tabWidth": 4,
+  "html": {
+    "htmlWhitespaceSensitivity": "ignore"
+  }
 }
