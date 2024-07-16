@@ -44,7 +44,7 @@ jobs:
           API_KEY: ${{ secrets.NEKOWEB_API_KEY }}
           BUILD_DIR: "./build"
           DEPLOY_DIR: "/"
-          CLEANUP: "False"
+          CLEANUP: "True"
           DELAY: "0.5"
           NEKOWEB_PAGENAME: "ohitstom"
           ENCRYPTION_KEY: ${{ secrets.NEKOWEB_ENCRYPTION_KEY }}
