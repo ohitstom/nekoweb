@@ -31,7 +31,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -45,9 +45,9 @@ jobs:
         uses: mp-pinheiro/nekoweb-deploy@main
         with:
           API_KEY: ${{ secrets.NEKOWEB_API_KEY }}
-          BUILD_DIR: './build'
-          DEPLOY_DIR: '/'
-          CLEANUP: 'False'
-          DELAY: '0.5'
-          NEKOWEB_PAGENAME: 'ohitstom'
+          BUILD_DIR: "./build"
+          DEPLOY_DIR: "/"
+          CLEANUP: "False"
+          DELAY: "0.5"
+          NEKOWEB_PAGENAME: "ohitstom"
           ENCRYPTION_KEY: ${{ secrets.NEKOWEB_ENCRYPTION_KEY }}
