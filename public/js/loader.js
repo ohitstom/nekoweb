@@ -11,7 +11,7 @@ function getCurrentPage() {
 function loadScript(filename) {
   const startTime = performance.now();
   const script = document.createElement("script");
-  script.src = `${filename}.js`;
+  script.src = `/js/${filename}.js`;
   script.async = true;
   script.onload = () => {
     const endTime = performance.now();
