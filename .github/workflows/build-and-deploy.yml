@@ -20,7 +20,7 @@ jobs:
           npm install sass
 
       - name: Format files with Prettier
-        run: npx prettier --write "**/*.{js,jsx,ts,tsx,css,scss,html,json,md}"
+        run: npx prettier --config .prettierrc --write "**/*.{js,jsx,ts,tsx,css,scss,html,json,md}"
 
       - name: Compile Sass
         run: npx sass scss/app.scss:public/css/index.css --no-source-map

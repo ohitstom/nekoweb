@@ -7,8 +7,8 @@
 	"object" == typeof exports && "undefined" != typeof module
 		? t(exports)
 		: "function" == typeof define && define.amd
-			? define(["exports"], t)
-			: t(((e = "undefined" != typeof globalThis ? globalThis : e || self).marked = {}));
+		? define(["exports"], t)
+		: t(((e = "undefined" != typeof globalThis ? globalThis : e || self).marked = {}));
 })(this, function (e) {
 	"use strict";
 	function t() {
@@ -239,8 +239,8 @@
 						(this.options.pedantic
 							? ((p = 2), (o = a.trimStart()))
 							: h
-								? (p = t[1].length + 1)
-								: ((p = t[2].search(/[^ ]/)), (p = p > 4 ? 1 : p), (o = a.slice(p)), (p += t[1].length)),
+							? (p = t[1].length + 1)
+							: ((p = t[2].search(/[^ ]/)), (p = p > 4 ? 1 : p), (o = a.slice(p)), (p += t[1].length)),
 						h && /^ *$/.test(c) && ((s += c + "\n"), (e = e.substring(c.length + 1)), (n = !0)),
 						!n)
 					) {
@@ -314,10 +314,10 @@
 					/^ *-+: *$/.test(e)
 						? i.align.push("right")
 						: /^ *:-+: *$/.test(e)
-							? i.align.push("center")
-							: /^ *:-+ *$/.test(e)
-								? i.align.push("left")
-								: i.align.push(null);
+						? i.align.push("center")
+						: /^ *:-+ *$/.test(e)
+						? i.align.push("left")
+						: i.align.push(null);
 				for (let e = 0; e < n.length; e++) i.header.push({ text: n[e], tokens: this.lexer.inline(n[e]), header: !0, align: i.align[e] });
 				for (const e of r)
 					i.rows.push(f(e, i.header.length).map((e, t) => ({ text: e, tokens: this.lexer.inline(e), header: !1, align: i.align[t] })));
@@ -798,9 +798,9 @@
 							(r = t[t.length - 1]),
 								n && "paragraph" === r?.type
 									? ((r.raw += "\n" + s.raw),
-										(r.text += "\n" + s.text),
-										this.inlineQueue.pop(),
-										(this.inlineQueue[this.inlineQueue.length - 1].src = r.text))
+									  (r.text += "\n" + s.text),
+									  this.inlineQueue.pop(),
+									  (this.inlineQueue[this.inlineQueue.length - 1].src = r.text))
 									: t.push(s),
 								(n = i.length !== e.length),
 								(e = e.substring(s.raw.length));
@@ -809,9 +809,9 @@
 								(r = t[t.length - 1]),
 								r && "text" === r.type
 									? ((r.raw += "\n" + s.raw),
-										(r.text += "\n" + s.text),
-										this.inlineQueue.pop(),
-										(this.inlineQueue[this.inlineQueue.length - 1].src = r.text))
+									  (r.text += "\n" + s.text),
+									  this.inlineQueue.pop(),
+									  (this.inlineQueue[this.inlineQueue.length - 1].src = r.text))
 									: t.push(s);
 						else if (e) {
 							const t = "Infinite loop on byte: " + e.charCodeAt(0);
@@ -945,7 +945,7 @@
 				e.loose
 					? e.tokens.length > 0 && "paragraph" === e.tokens[0].type
 						? ((e.tokens[0].text = n + " " + e.tokens[0].text),
-							e.tokens[0].tokens &&
+						  e.tokens[0].tokens &&
 								e.tokens[0].tokens.length > 0 &&
 								"text" === e.tokens[0].tokens[0].type &&
 								(e.tokens[0].tokens[0].text = n + " " + e.tokens[0].tokens[0].text))
@@ -1232,7 +1232,7 @@
 							? this.defaults.extensions.childTokens[e.type].forEach(s => {
 									const r = e[s].flat(1 / 0);
 									n = n.concat(this.walkTokens(r, t));
-								})
+							  })
 							: e.tokens && (n = n.concat(this.walkTokens(e.tokens, t)));
 					}
 				}
@@ -1254,7 +1254,7 @@
 										? function (...t) {
 												let s = e.renderer.apply(this, t);
 												return !1 === s && (s = n.apply(this, t)), s;
-											}
+										  }
 										: e.renderer;
 								}
 								if ("tokenizer" in e) {
@@ -1316,11 +1316,11 @@
 										if (this.defaults.async) return Promise.resolve(r.call(t, e)).then(e => i.call(t, e));
 										const n = r.call(t, e);
 										return i.call(t, n);
-									})
+								  })
 								: (t[s] = (...e) => {
 										let n = r.apply(t, e);
 										return !1 === n && (n = i.apply(t, e)), n;
-									});
+								  });
 						}
 						n.hooks = t;
 					}
@@ -1351,13 +1351,13 @@
 											"colon" === (t = t.toLowerCase())
 												? ":"
 												: "#" === t.charAt(0)
-													? "x" === t.charAt(1)
-														? String.fromCharCode(parseInt(t.substring(2), 16))
-														: String.fromCharCode(+t.substring(1))
-													: ""
+												? "x" === t.charAt(1)
+													? String.fromCharCode(parseInt(t.substring(2), 16))
+													: String.fromCharCode(+t.substring(1))
+												: ""
 										);
 									})(n.parser.parseInline(s.tokens, n.parser.textRenderer))
-								)
+							  )
 							: e.apply(this, arguments);
 					};
 				case "code":
@@ -1404,7 +1404,7 @@
 								i
 									? t.tokens.length > 0 && "paragraph" === t.tokens[0].type
 										? ((t.tokens[0].text = e + " " + t.tokens[0].text),
-											t.tokens[0].tokens &&
+										  t.tokens[0].tokens &&
 												t.tokens[0].tokens.length > 0 &&
 												"text" === t.tokens[0].tokens[0].type &&
 												(t.tokens[0].tokens[0].text = e + " " + t.tokens[0].tokens[0].text))
