@@ -1,6 +1,18 @@
 #test body {
   backdrop-filter: blur(4px);
-  transition: backdrop-filter 0.5s ease-in;
+  backdrop-filter: sepia(1) hue-rotate(0deg) saturate(2);
+  animation: rainbow 7.2s linear infinite;
+  transition: all 0.5s ease-in;
+}
+@keyframes rainbow {
+  0% {
+    backdrop-filter: sepia(1) hue-rotate(0deg) saturate(2);
+    transition: all 0.5s ease-in;
+  }
+  100% {
+    backdrop-filter: sepia(1) hue-rotate(360deg) saturate(2);
+    transition: all 0.5s ease-in;
+  }
 }
 
 .wrapper {
@@ -55,14 +67,4 @@ markdown[loaded] {
   background-size: cover;
   display: block;
   margin: 8px;
-  filter: sepia(1) hue-rotate(0deg) saturate(2);
-  animation: rainbow 10s linear infinite;
-}
-@keyframes rainbow {
-  0% {
-    filter: sepia(1) hue-rotate(0deg) saturate(2);
-  }
-  100% {
-    filter: sepia(1) hue-rotate(360deg) saturate(2);
-  }
 }
