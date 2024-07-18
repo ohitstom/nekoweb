@@ -65,7 +65,7 @@ jobs:
           cp -r ./public/* ./build
 
       - name: Minify HTML files
-        run: find build -name "*.html" -exec html-minifier --collapse-whitespace --remove-comments --remove-redundant-attributes --use-short-doctype --minify-css true --minify-js true -o {} {} \;
+        run: find build -name "*.html" -exec html-minifier --remove-comments --remove-redundant-attributes --use-short-doctype --minify-css true --minify-js true -o {} {} \;
 
       - name: Minify JavaScript files
         run: find build -name "*.js" -exec uglifyjs --compress --mangle -o {} -- {} \;

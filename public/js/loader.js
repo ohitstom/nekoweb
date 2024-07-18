@@ -17,7 +17,8 @@ async function loadAllScripts() {
 			// Load scripts sequentially
 			for (const script in scripts) {
 				if (scripts.hasOwnProperty(script)) {
-					const defer = typeof scripts[script] === "object" && scripts[script].defer;
+					const defer =
+						typeof scripts[script] === "object" && scripts[script].defer;
 					await loadScript(script, defer);
 				}
 			}
@@ -26,7 +27,8 @@ async function loadAllScripts() {
 			const scriptPromises = [];
 			for (const script in scripts) {
 				if (scripts.hasOwnProperty(script)) {
-					const defer = typeof scripts[script] === "object" && scripts[script].defer;
+					const defer =
+						typeof scripts[script] === "object" && scripts[script].defer;
 					scriptPromises.push(loadScript(script, defer));
 				}
 			}
