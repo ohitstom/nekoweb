@@ -1,6 +1,21 @@
 #test {
 	body {
 		backdrop-filter: blur(4px);
-		transition: backdrop-filter 0.5s ease-in;
+		backdrop-filter: sepia(1) hue-rotate(0deg) saturate(2);
+		animation: rainbow 7.2s linear infinite;
+		transition: all 0.5s ease-in;
+	}
+
+
+	@keyframes rainbow {
+		0% {
+			backdrop-filter: sepia(1) hue-rotate(0deg) saturate(2);
+			transition: all 0.5s ease-in;
+		}
+
+		100% {
+			backdrop-filter: sepia(1) hue-rotate(360deg) saturate(2);
+			transition: all 0.5s ease-in;
+		}
 	}
 }

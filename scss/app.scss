@@ -24,18 +24,5 @@
 		background-size: cover;
 		display: block;
 		margin: 8px;
-		filter: sepia(1) hue-rotate(0deg) saturate(2);
-		animation: rainbow 10s linear infinite;
-	}
-
-
-	@keyframes rainbow {
-		0% {
-			filter: sepia(1) hue-rotate(0deg) saturate(2);
-		}
-
-		100% {
-			filter: sepia(1) hue-rotate(360deg) saturate(2);
-		}
 	}
 }
