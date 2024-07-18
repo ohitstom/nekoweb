@@ -31,7 +31,6 @@
 markdown {
   opacity: 0;
 }
-
 markdown[loaded] {
   opacity: 1;
 }
