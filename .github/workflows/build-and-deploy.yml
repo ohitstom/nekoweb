@@ -25,6 +25,12 @@ jobs:
       - name: Compile Sass
         run: npx sass scss/app.scss:public/css/index.css --no-source-map
 
+      - name: Remove node_modules and package files
+        run: |
+          rm -rf node_modules
+          rm package.json
+          rm package-lock.json
+
       - name: Commit formatted and compiled files
         uses: stefanzweifel/git-auto-commit-action@v4
         if: ${{ github.repository == 'ohitstom/nekoweb' && github.ref == 'refs/heads/main' }}
