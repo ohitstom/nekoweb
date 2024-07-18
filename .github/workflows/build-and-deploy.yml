@@ -32,6 +32,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch latest commit
+        run: git fetch origin main
+
+      - name: Checkout latest commit
+        run: git checkout -B main origin/main
 
       - name: Prepare build
         run: |
