@@ -14,14 +14,22 @@ jobs:
         with:
           node-version: "lts/*"
 
-      - name: Compile Sass
-        run: npx sass scss/app.scss:public/css/index.css --no-source-map --style=compressed
+      - name: Install dependencies
+        run: |
+          npm install --save-dev prettier
+          npm install sass
 
-      - name: Push Changes
+      - name: Format files with Prettier
+        run: npx prettier --write "**/*.{js,jsx,ts,tsx,css,scss,html,json,md}"
+
+      - name: Compile Sass
+        run: npx sass scss/app.scss:public/css/index.css --no-source-map
+
+      - name: Commit formatted and compiled files
         uses: stefanzweifel/git-auto-commit-action@v4
         if: ${{ github.repository == 'ohitstom/nekoweb' && github.ref == 'refs/heads/main' }}
         with:
-          commit_message: "chore: compile sass"
+          commit_message: "chore: format and compile"
           commit_author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
           branch: ${{ github.ref }}
 
@@ -41,10 +49,23 @@ jobs:
       - name: Checkout latest commit
         run: git checkout -B main origin/main
 
+      - name: Install dependencies
+        run: |
+          npm install -g html-minifier uglify-js cssnano-cli
+
       - name: Prepare build
         run: |
           mkdir -p ./build
           cp -r ./public/* ./build
+
+      - name: Minify HTML files
+        run: find build -name "*.html" -exec html-minifier --collapse-whitespace --remove-comments --remove-redundant-attributes --use-short-doctype --minify-css true --minify-js true -o {} {} \;
+
+      - name: Minify JavaScript files
+        run: find build -name "*.js" -exec uglifyjs --compress --mangle -o {} -- {} \;
+
+      - name: Minify CSS files
+        run: find build -name "*.css" -exec cssnano {} {} \;
 
       - name: Deploy to Nekoweb
         uses: mp-pinheiro/nekoweb-deploy@main
